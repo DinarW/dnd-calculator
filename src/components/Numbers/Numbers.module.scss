@@ -1,0 +1,15 @@
+.numbersWrapper {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  max-height: 244px;
+  max-width: 232px;
+
+  button {
+    margin-bottom: 8px;
+  }
+}
+
+.onCanvas {
+  margin-bottom: 12px;
+}

@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  border: $border-button;
+  border-radius: 6px;
+  transition: all ease-in-out 50ms;
+  cursor: grab;
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+  }
+}
+
+.active {
+  &:hover {
+    border: $border-button_active;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+}

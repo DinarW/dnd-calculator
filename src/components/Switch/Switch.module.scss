@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.switchBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .switch {
+    display: flex;
+    justify-content: space-between;
+    width: 243px;
+    height: 38px;
+    background-color: $light-background;
+    border-radius: 6px;
+    padding: 1px;
+  }
+}

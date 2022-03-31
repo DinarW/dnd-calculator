@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 243px;
+  max-height: 480px;
+  border-radius: 6px;
+
+  .helpText {
+    text-align: center;
+    width: 13ch;
+
+    h4 {
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: $active-color;
+    }
+
+    span {
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-text-color;
+    }
+  }
+}
+
+.empty {
+  border: $border-dashed;
+  min-height: 480px;
+}

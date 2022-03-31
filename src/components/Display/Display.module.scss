@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 232px;
+  padding: 4px 8px;
+  background: $light-background;
+  border-radius: 6px;
+
+  span {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    color: $dark-text-color;
+  }
+}
+
+.dragged {
+  margin-bottom: 12px;
+}
+
+.dragged.onSidebar {
+  opacity: 50%;
+}
