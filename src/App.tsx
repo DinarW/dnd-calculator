@@ -1,11 +1,20 @@
-import React from 'react';
+import React from "react";
+import Switch from "./components/Switch";
+import Sidebar from "./components/Sidebar";
+import Canvas from "./components/Canvas";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-
+    <div className="app">
+      <div className="content">
+        <Switch />
+        <div className="cols">
+          <Sidebar />
+          <Canvas />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
