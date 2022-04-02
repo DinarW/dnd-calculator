@@ -1,4 +1,9 @@
-import type { itemsStateType, itemNameType, placeType, actionType } from "../types";
+import type {
+  itemsStateType,
+  itemNameType,
+  placeType,
+  actionType,
+} from "../types";
 
 const initialState: itemsStateType = {
   display: {
@@ -21,15 +26,15 @@ const itemsReducer = (
 ) => {
   switch (action.type) {
     case "CHANGE_ORDER": {
-      const { name, order }: { name: itemNameType, order: number } =
+      const { name, order }: { name: itemNameType; order: number } =
         action.payload;
       return {
         ...state,
         [name]: {
           ...state[name],
-          order
-        }
-      }
+          order,
+        },
+      };
     }
     case "CHANGE_PLACE": {
       const { name, place }: { name: itemNameType; place: placeType } =
@@ -38,8 +43,8 @@ const itemsReducer = (
         ...state,
         [name]: {
           ...state[name],
-          place
-        }
+          place,
+        },
       };
     }
     case "TOGGLE_DRAGGED": {
@@ -48,9 +53,9 @@ const itemsReducer = (
         ...state,
         [name]: {
           ...state[name],
-          dragged: !state[name]?.dragged
-        }
-      }
+          dragged: !state[name]?.dragged,
+        },
+      };
     }
     default:
       return state;

@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div>
-      <div style={{ display: mode === 'Runtime' ? 'none' : 'block' }}>
+      <div style={{ display: mode === "Runtime" ? "none" : "block" }}>
         <Display text="0" position="sidebar" />
         <Operators position="sidebar" />
         <Keyboard position="sidebar" />

@@ -13,8 +13,7 @@ const Operators: React.FC<{ position: "sidebar" | "canvas" }> = ({
   position,
 }) => {
   const onCanvas = useSelector(
-    (state: rootStateType) =>
-      state.items.operators.place === "canvas"
+    (state: rootStateType) => state.items.operators.place === "canvas"
   );
   const isTransparentButtons = position === "sidebar" && onCanvas;
 

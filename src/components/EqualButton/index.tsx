@@ -5,7 +5,7 @@ import Block from "../Block";
 
 import styles from "./EqualButton.module.scss";
 import rootStateType from "../../redux/types";
-import {pressEqual} from "../../redux/actions/calculate";
+import { pressEqual } from "../../redux/actions/calculate";
 
 const EqualButton: React.FC<{ position: "sidebar" | "canvas" }> = ({
   position,
@@ -24,7 +24,10 @@ const EqualButton: React.FC<{ position: "sidebar" | "canvas" }> = ({
 
   return (
     <Block height="72px" itemName="equalButton" wrapperVisibility={!onCanvas}>
-      <button className={buttonClass} onClick={() => mode === 'Runtime' && dispatch(pressEqual())}>
+      <button
+        className={buttonClass}
+        onClick={() => mode === "Runtime" && dispatch(pressEqual())}
+      >
         <span>=</span>
       </button>
     </Block>

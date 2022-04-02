@@ -6,7 +6,7 @@ import appReducer from "./reducers/appReducer";
 const rootReducer = combineReducers({
   app: appReducer,
   items: itemsReducer,
-  calc: calcReducer
+  calc: calcReducer,
 });
 
 const store = createStore(rootReducer);

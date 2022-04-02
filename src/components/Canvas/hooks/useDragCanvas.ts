@@ -15,7 +15,7 @@ const useDragCanvas = (canvas: HTMLDivElement | null) => {
   });
 
   const maxOrder = Object.values(items)
-    .filter((value) => value.order && value.place === 'canvas')
+    .filter((value) => value.order && value.place === "canvas")
     .map((value) => value.order)
     .sort((a, b) => (b || 0) - (a || 0))[0];
 
@@ -45,16 +45,18 @@ const useDragCanvas = (canvas: HTMLDivElement | null) => {
     if (!item) {
       // если дропаем на пустое место канваса
       dispatch(changePlace(draggedItem, "canvas"));
-      dispatch(changeOrder(
+      dispatch(
+        changeOrder(
           draggedItem,
           draggedItem === "display" ? 0 : maxOrder ? maxOrder + 1 : 1
-      ));
+        )
+      );
 
       return;
     }
 
-    if (items[draggedItem].place === 'side') {
-      dispatch(changePlace(draggedItem, 'canvas'));
+    if (items[draggedItem].place === "side") {
+      dispatch(changePlace(draggedItem, "canvas"));
     }
     if (draggedItem === "display") {
       dispatch(changeOrder(draggedItem, 0));
@@ -63,9 +65,9 @@ const useDragCanvas = (canvas: HTMLDivElement | null) => {
 
     const name = item.getAttribute("data-name") as itemNameType;
     const sortedByOrderItems = Object.entries(items)
-      .filter((item) => (item[1].place === 'canvas') && (item[0] !== 'display'))
+      .filter((item) => item[1].place === "canvas" && item[0] !== "display")
       .sort((a, b) => (a[1].order || 1) - (b[1].order || 1))
-      .map(item => item[0]);
+      .map((item) => item[0]);
     // индекс(order - 1) элемента на который дропаем
     const dropIndex = sortedByOrderItems.indexOf(name);
     // индекс(order - 1) элемента который дропаем

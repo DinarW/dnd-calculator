@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { useSelector, useDispatch } from "react-redux";
 import { changePlace, toggleDragged } from "../../redux/actions/moveComponent";
-import rootStateType, {itemNameType, itemType} from "../../redux/types";
+import rootStateType, { itemNameType, itemType } from "../../redux/types";
 
 import styles from "./Block.module.scss";
 
@@ -21,9 +21,10 @@ const Block: React.FC<BlockProps> = ({
 }) => {
   const dispatch = useDispatch();
 
-  const [mode, item] = useSelector(
-      (state: rootStateType) => [state.app.mode, state.items[itemName]]
-  ) as ["Runtime" | "Constructor", itemType];
+  const [mode, item] = useSelector((state: rootStateType) => [
+    state.app.mode,
+    state.items[itemName],
+  ]) as ["Runtime" | "Constructor", itemType];
 
   const handleDragStart = () => {
     dispatch(toggleDragged(itemName));
@@ -31,13 +32,13 @@ const Block: React.FC<BlockProps> = ({
 
   const handleDragEnd = () => {
     dispatch(toggleDragged(itemName));
-  }
+  };
 
   const handleDoubleClick = () => {
-    if ((item.place === 'canvas') && (mode === 'Constructor')) {
-      dispatch(changePlace(itemName, 'side'));
+    if (item.place === "canvas" && mode === "Constructor") {
+      dispatch(changePlace(itemName, "side"));
     }
-  }
+  };
 
   return (
     <div

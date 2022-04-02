@@ -1,13 +1,9 @@
 export type actionType = {
-  type: string,
-  payload?: any,
+  type: string;
+  payload?: any;
 };
 
-export type itemNameType =
-    | "display"
-    | "operators"
-    | "keyboard"
-    | "equalButton";
+export type itemNameType = "display" | "operators" | "keyboard" | "equalButton";
 
 export type placeType = "side" | "canvas";
 
@@ -25,12 +21,12 @@ export type calcStateType = {
   firstArgument: string[];
   secondArgument: string[];
   operator: string;
-  enter: 'firstArgument' | 'secondArgument';
+  enter: "firstArgument" | "secondArgument";
 };
 
 export type appStateType = {
   mode: "Runtime" | "Constructor";
-}
+};
 
 export default interface rootStateType {
   items: itemsStateType;

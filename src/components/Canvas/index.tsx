@@ -19,17 +19,16 @@ const itemComponents = {
 };
 
 const Canvas: React.FC = () => {
-  const [items, names] = useSelector(
-  (state: rootStateType) => [state.items, Object.keys(state.items)]
-  ) as [itemsStateType, itemNameType[]];
+  const [items, names] = useSelector((state: rootStateType) => [
+    state.items,
+    Object.keys(state.items),
+  ]) as [itemsStateType, itemNameType[]];
 
   const canvasRef = React.useRef() as React.RefObject<HTMLDivElement>;
-  const {
-    dragOverHandler,
-    dragLeaveHandler,
-    dropHandler
-  } = useDragCanvas(canvasRef.current);
-  const itemsOnCanvas = names.filter((name) => items[name].place === 'canvas');
+  const { dragOverHandler, dragLeaveHandler, dropHandler } = useDragCanvas(
+    canvasRef.current
+  );
+  const itemsOnCanvas = names.filter((name) => items[name].place === "canvas");
 
   return (
     <div

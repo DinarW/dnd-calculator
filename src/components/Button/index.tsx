@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import rootStateType from "../../redux/types";
 
 import styles from "./Button.module.scss";
-import {enterNumber, enterOperator} from "../../redux/actions/calculate";
+import { enterNumber, enterOperator } from "../../redux/actions/calculate";
 
 interface ButtonProps {
   content: string;
@@ -19,14 +19,14 @@ const Button: React.FC<ButtonProps> = (props) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    if (mode === 'Runtime') {
+    if (mode === "Runtime") {
       dispatch(
-          !Number.isNaN(Number(content)) || (content === ',') ?
-              enterNumber(content) :
-              enterOperator(content)
+        !Number.isNaN(Number(content)) || content === ","
+          ? enterNumber(content)
+          : enterOperator(content)
       );
     }
-  }
+  };
 
   return (
     <button

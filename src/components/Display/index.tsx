@@ -13,12 +13,11 @@ interface DisplayProps {
 
 const Display: React.FC<DisplayProps> = ({ text, position }) => {
   const { onCanvas, displayText } = useSelector((state: rootStateType) => {
-      const onCanvas = state.items.display.place === 'canvas';
-      const displayText = parseFloat(state.calc[state.calc.enter].join(''));
+    const onCanvas = state.items.display.place === "canvas";
+    const displayText = parseFloat(state.calc[state.calc.enter].join(""));
 
-      return { onCanvas, displayText };
-    }
-  );
+    return { onCanvas, displayText };
+  });
 
   const displayClass = clsx(
     styles.display,
@@ -29,7 +28,11 @@ const Display: React.FC<DisplayProps> = ({ text, position }) => {
   return (
     <Block height="60px" itemName="display" wrapperVisibility={!onCanvas}>
       <div className={displayClass}>
-        <span>{Number.isNaN(displayText) || !Number.isFinite(displayText) ? 'Не определенно' : displayText}</span>
+        <span>
+          {Number.isNaN(displayText) || !Number.isFinite(displayText)
+            ? "Не определенно"
+            : displayText}
+        </span>
       </div>
     </Block>
   );

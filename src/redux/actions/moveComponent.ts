@@ -2,7 +2,7 @@ import { itemNameType, placeType } from "../types";
 
 export const toggleDragged = (name: itemNameType) => ({
   type: "TOGGLE_DRAGGED",
-  payload: { name }
+  payload: { name },
 });
 
 export const changePlace = (name: itemNameType, place: placeType) => ({
@@ -12,5 +12,5 @@ export const changePlace = (name: itemNameType, place: placeType) => ({
 
 export const changeOrder = (name: itemNameType, order: number) => ({
   type: "CHANGE_ORDER",
-  payload: { name, order }
+  payload: { name, order },
 });
