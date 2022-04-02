@@ -1,9 +1,10 @@
 import React from "react";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import rootStateType from "../../redux/types";
 
 import styles from "./Button.module.scss";
+import {enterNumber, enterOperator} from "../../redux/actions/calculate";
 
 interface ButtonProps {
   content: string;
@@ -15,6 +16,17 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
   const { content, height = "48px", width = "72px", transparent } = props;
   const mode = useSelector((state: rootStateType) => state.app.mode);
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    if (mode === 'Runtime') {
+      dispatch(
+          !Number.isNaN(Number(content)) || (content === ',') ?
+              enterNumber(content) :
+              enterOperator(content)
+      );
+    }
+  }
 
   return (
     <button
@@ -22,6 +34,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         styles.button,
         mode === "Runtime" && !transparent && styles.active
       )}
+      onClick={handleClick}
       style={{
         height: height,
         width: width,

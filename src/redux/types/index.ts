@@ -21,6 +21,13 @@ export type itemsStateType = {
   [index in itemNameType]: itemType;
 };
 
+export type calcStateType = {
+  firstArgument: string[];
+  secondArgument: string[];
+  operator: string;
+  enter: 'firstArgument' | 'secondArgument';
+};
+
 export type appStateType = {
   mode: "Runtime" | "Constructor";
 }
@@ -28,4 +35,5 @@ export type appStateType = {
 export default interface rootStateType {
   items: itemsStateType;
   app: appStateType;
+  calc: calcStateType;
 }

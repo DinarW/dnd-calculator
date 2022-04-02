@@ -1,10 +1,11 @@
 import React from "react";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Block from "../Block";
 
 import styles from "./EqualButton.module.scss";
 import rootStateType from "../../redux/types";
+import {pressEqual} from "../../redux/actions/calculate";
 
 const EqualButton: React.FC<{ position: "sidebar" | "canvas" }> = ({
   position,
@@ -19,12 +20,13 @@ const EqualButton: React.FC<{ position: "sidebar" | "canvas" }> = ({
     position === "sidebar" && styles.onSidebar,
     mode === "Runtime" && styles.active
   );
+  const dispatch = useDispatch();
 
   return (
     <Block height="72px" itemName="equalButton" wrapperVisibility={!onCanvas}>
-      <div className={buttonClass}>
+      <button className={buttonClass} onClick={() => mode === 'Runtime' && dispatch(pressEqual())}>
         <span>=</span>
-      </div>
+      </button>
     </Block>
   );
 };
