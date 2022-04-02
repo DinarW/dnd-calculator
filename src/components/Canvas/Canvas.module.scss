@@ -4,12 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: start;
+  align-content: start;
   flex-wrap: wrap;
   width: 243px;
   max-height: 480px;
   border-radius: 6px;
 
   .helpText {
+    margin-top: 200px;
     text-align: center;
     width: 13ch;
 

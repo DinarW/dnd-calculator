@@ -19,7 +19,7 @@ const Operators: React.FC<{ position: "sidebar" | "canvas" }> = ({
   const isTransparentButtons = position === "sidebar" && onCanvas;
 
   return (
-    <Block height="56px" wrapperVisibility={!onCanvas}>
+    <Block height="56px" itemName="operators" wrapperVisibility={!onCanvas}>
       <div
         className={clsx(styles.operatorsWrapper, onCanvas && styles.dragged)}
       >

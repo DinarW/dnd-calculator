@@ -13,7 +13,7 @@ interface DisplayProps {
 
 const Display: React.FC<DisplayProps> = ({ text, position }) => {
   const onCanvas = useSelector(
-    (state: rootStateType) => state.items.display.place
+    (state: rootStateType) => state.items.display.place === 'canvas'
   );
 
   const displayClass = clsx(
@@ -23,7 +23,7 @@ const Display: React.FC<DisplayProps> = ({ text, position }) => {
   );
 
   return (
-    <Block height="60px" wrapperVisibility={!onCanvas}>
+    <Block height="60px" itemName="display" wrapperVisibility={!onCanvas}>
       <div className={displayClass}>
         <span>{text}</span>
       </div>

@@ -4,7 +4,7 @@ import rootStateType from "../../redux/types";
 
 import Display from "../Display";
 import Operators from "../Operators";
-import Numbers from "../Numbers";
+import Keyboard from "../Keyboard";
 import EqualButton from "../EqualButton";
 
 const Sidebar: React.FC = () => {
@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
       <div style={{ display: mode === 'Runtime' ? 'none' : 'block' }}>
         <Display text="0" position="sidebar" />
         <Operators position="sidebar" />
-        <Numbers position="sidebar" />
+        <Keyboard position="sidebar" />
         <EqualButton position="sidebar" />
       </div>
     </div>

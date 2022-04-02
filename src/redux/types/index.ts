@@ -6,7 +6,7 @@ export type actionType = {
 export type itemNameType =
     | "display"
     | "operators"
-    | "numbers"
+    | "keyboard"
     | "equalButton";
 
 export type placeType = "side" | "canvas";
@@ -14,6 +14,7 @@ export type placeType = "side" | "canvas";
 export type itemType = {
   place: placeType;
   order?: number;
+  dragged?: boolean;
 };
 
 export type itemsStateType = {

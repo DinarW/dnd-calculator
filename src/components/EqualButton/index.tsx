@@ -21,7 +21,7 @@ const EqualButton: React.FC<{ position: "sidebar" | "canvas" }> = ({
   );
 
   return (
-    <Block height="72px" wrapperVisibility={!onCanvas}>
+    <Block height="72px" itemName="equalButton" wrapperVisibility={!onCanvas}>
       <div className={buttonClass}>
         <span>=</span>
       </div>

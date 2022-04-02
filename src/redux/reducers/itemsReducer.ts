@@ -2,13 +2,13 @@ import type { itemsStateType, itemNameType, placeType, actionType } from "../typ
 
 const initialState: itemsStateType = {
   display: {
-    place: "canvas",
+    place: "side",
   },
   operators: {
     place: "side",
   },
-  numbers: {
-    place: "canvas",
+  keyboard: {
+    place: "side",
   },
   equalButton: {
     place: "side",
@@ -41,6 +41,16 @@ const itemsReducer = (
           place
         }
       };
+    }
+    case "TOGGLE_DRAGGED": {
+      const name: itemNameType = action.payload.name;
+      return {
+        ...state,
+        [name]: {
+          ...state[name],
+          dragged: !state[name]?.dragged
+        }
+      }
     }
     default:
       return state;
