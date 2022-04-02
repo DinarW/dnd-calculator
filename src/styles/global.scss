@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  body {
+    font-family: Inter, sans-serif;
+
+    .app {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .content {
+        width: 695px;
+        height: 640px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        padding: 40px 80px;
+
+        .cols {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

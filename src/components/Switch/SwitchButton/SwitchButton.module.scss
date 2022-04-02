@@ -1,0 +1,17 @@
+@import "../../../styles/variables.scss";
+
+.switchButton {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 50ms;
+}
+
+.active {
+  background-color: $white;
+  border: $border-button;
+  border-radius: 6px;
+  cursor: default;
+}

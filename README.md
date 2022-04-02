@@ -4,3 +4,5 @@
 
 - TypeScript
 - ReactJS
+- Redux
+- CSS Modules

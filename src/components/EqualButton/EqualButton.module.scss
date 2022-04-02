@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.equalButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 232px;
+  height: 64px;
+  background: $active-color;
+  border-radius: 6px;
+  cursor: grab;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+
+  span {
+    color: $white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+  }
+}
+
+.active:hover {
+  cursor: pointer;
+}
+
+.dragged {
+  margin-bottom: 16px;
+}
+
+.dragged.onSidebar {
+  opacity: 50%;
+}
